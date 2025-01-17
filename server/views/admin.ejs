@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <a href="/admin/add" class="add-button">Add Product</a>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(product => { %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td>Rp <%= product.price.toLocaleString() %></td>
+          <td><%= product.category %></td>
+          <td>
+            <img src="/assets/images/<%= product.image_url.split('/').pop() %>" alt="<%= product.name %>" class="product-img">
+          </td>
+          <td>
+            <a href="/admin/edit/<%= product.id %>">Edit</a> |
+            <a href="/admin/delete/<%= product.id %>">Delete</a>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

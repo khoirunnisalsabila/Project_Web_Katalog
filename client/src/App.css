@@ -1,0 +1,276 @@
+/* Styling umum */
+.App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  color: #333;
+  margin-top: 60px; /* Memberikan margin agar navbar tidak menutupi konten */
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  position: fixed; /* Membuat navbar tetap di atas saat scroll */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: right;
+  gap: 40px;
+}
+
+.navbar-item {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.navbar-item:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Styling untuk setiap bagian */
+.section {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px; /* Memberikan ruang setelah navbar tetap */
+}
+
+.section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Penataan produk */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  width: 100%;
+}
+
+.product-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.product-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background-color: #f9fafb;
+}
+
+/* Menata gambar produk agar pas dalam card */
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Menjaga gambar tetap proporsional dan pas di dalam card */
+}
+
+/* Gaya teks produk */
+.product-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.product-description {
+  color: #4b4b4b;
+}
+
+.product-price {
+  color: #38a169;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Bagian Home - Menambahkan efek geser pada gambar tanpa mengubah teks */
+#home {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Menyembunyikan bagian gambar yang lebih */
+}
+
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Gambar akan menutupi seluruh container */
+  transition: transform 1s ease-in-out;
+}
+
+.text-container {
+  position: absolute;
+  top: 24%; /* Posisikan teks di tengah vertikal */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Menyelaraskan teks secara horizontal dan vertikal */
+  color: #333;
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.text-container h1 {
+  margin: 0;
+  font-size: 2.5rem; /* Ukuran judul lebih besar */
+}
+
+.text-container h4, .text-container p {
+  font-size: 0.8rem; /* Ukuran teks deskripsi lebih kecil */
+  margin-top: 15px;
+}
+
+/* Menambahkan efek geser gambar saat hover */
+.home-image:hover {
+  transform: scale(1.1); /* Zoom in gambar saat hover */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-list {
+    flex-direction: column;
+  }
+
+  .text-container h1 {
+    font-size: 2.5rem; /* Ukuran lebih kecil untuk mobile */
+  }
+
+  .text-container h4, .text-container p {
+    font-size: 1rem; /* Ukuran teks lebih kecil untuk mobile */
+  }
+}
+
+/* Bagian Blog Section */
+.blog-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.blog-item {
+  max-width: 500px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.blog-text {
+  padding: 2rem;
+}
+
+.blog-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.blog-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.read-more {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.blog-sidebar {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.blog-sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.blog-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-sidebar li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.blog-sidebar .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.blog-sidebar .social-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Footer Section */
+#footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.footer p {
+  font-size: 14px;
+  margin: 0;
+}
